@@ -1,4 +1,4 @@
-const getData = category => {
+const getData = (category) => {
 
     fetch(`https://openapi.programming-hero.com/api/news/category/${category}`)
         .then(Response => Response.json())
@@ -8,10 +8,21 @@ const getData = category => {
 
 }
 
-getData('01')
 
+/* const newsTypeList = {
+    home: { id: 01, name: 'Home' },
+    Breaking_news: { id: 01, name: 'Breaking News' },
+    Regular_news: { id: 01, name: 'Regular News' },
+    International_news: { id: 01, name: 'International News' },
+    Sports: { id: 01, name: 'Sports' },
+    Entertainment: { id: 01, name: 'Entertainment' },
+    Culture: { id: 01, name: 'Culture' },
+    Arts: { id: 01, name: 'Arts' },
+    All_news: { id: 01, name: 'All news' },
+}
+ */
 const newsTypeList = ['Home', 'Breaking news', 'Regular news', 'International news', 'Sports', 'Entertainment', 'Culture', 'Arts', 'All news'];
-
+//for (typeOfNews in newsTypeList) {} 
 newsTypeList.forEach(typeOfNews => {
     newsTypeContainer = document.getElementById('newsTypeContainer')
     const newsType = document.createElement('div');
@@ -20,11 +31,6 @@ newsTypeList.forEach(typeOfNews => {
     `
     newsTypeContainer.appendChild(newsType)
 });
-
-
-const displayNews = (newsType) => {
-    console.log(newsType);
-}
 
 
 // show data 
@@ -67,15 +73,53 @@ const showData = (datatype, category) => {
     `
         newsContainer.appendChild(newsDiv)
     })
-}
+};
 
 
 const displayNumberOfNews = (totalNumber, category) => {
     const numberOfNewsContainer = document.getElementById('numberOfNews')
-    const numberOfNewsDiv = document.createElement('div')
-    numberOfNewsDiv.innerHTML = `
+    // const numberOfNewsDiv = document.createElement('div')
+    numberOfNewsContainer.innerHTML = `
     <div>${totalNumber} items found for ${category} </div>
     `
-    numberOfNewsContainer.appendChild(numberOfNewsDiv)
 
-}
+
+};
+
+
+const displayNews = (newsType) => {
+    console.log(newsType);
+    switch (newsType) {
+        case "Home":
+            category = '08';
+            return getData(category)
+        case "Breaking news":
+            category = '01';
+            return getData(category)
+        case "Regular news":
+            category = '02';
+            return getData(category)
+        case "International news":
+            category = '03';
+            return getData(category)
+        case "Sports":
+            category = '04';
+            return getData(category)
+        case "Entertainment":
+            category = '05';
+            return getData(category)
+        case "Culture":
+            category = '06';
+            return getData(category)
+        case "Arts":
+            category = '07';
+            return getData(category)
+        case "All news":
+            category = '08';
+            return getData(category)
+    }
+
+};
+//displayNews('Home')
+
+//getData('04')
