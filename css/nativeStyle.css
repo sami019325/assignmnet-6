@@ -1,6 +1,8 @@
 body {
     margin: 0 auto;
     font-family: 'Manrope', sans-serif;
+    /* background: #F6F6F7; */
+    background-color: brown;
 }
 
 h1 {
