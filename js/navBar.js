@@ -10,7 +10,7 @@ const getData = (category, categoryName) => {
 }
 
 const displayNewsDetails = (id) => {
-    //textFull = undefined;
+    textFull = 2500;
     categoryName = "details";
     fetch(`https://openapi.programming-hero.com/api/news/${id}`)
         .then(Response => Response.json())
