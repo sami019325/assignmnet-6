@@ -32,8 +32,6 @@ newsTypeList.forEach(typeOfNews => {
 
 const showLoading = (signal) => {
     const loader = document.getElementById('loading')
-    console.log('loading', signal);
-
     if (signal) {
         loader.classList.remove('hidden');
         document.getElementById('noNewsFound').style.display = 'none';
@@ -49,14 +47,11 @@ const showLoading = (signal) => {
 const showData = (datatype, categoryName, textFull = 150) => {
     const newsContainer = document.getElementById('news_container');
     newsContainer.innerHTML = "";
-    console.log("showData function:", datatype.data, categoryName)
     const numberOfNews = datatype.data.length;
     if (numberOfNews === 0) { document.getElementById('noNewsFound').style.display = 'block'; }
     displayNumberOfNews(numberOfNews, categoryName)
-    console.log("number of data:", numberOfNews)
     const totalData = datatype.data
     totalData.forEach(news => {
-        console.log('Id of data: ', news._id)
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
     <div class="p-2 mt-5 bg-gray-50 rounded">
@@ -104,7 +99,6 @@ const displayNumberOfNews = (totalNumber, category) => {
 
 const displayNews = (newsType) => {
     showLoading(true)
-    console.log(newsType);
     switch (newsType) {
         case "Home":
             category = '08';
