@@ -5,14 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts: Manrope', sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <!-- css links -->
+    <link rel="stylesheet" href="css/nativeStyle.css">
+    <!-- tailWind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>YearOf News</title>
 </head>
-<nav>
-    <h1> <span>YearOf</span> News</h1>
-</nav>
 
 <body>
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="#" class="flex items-center p-5">
+                <h1 class="  grid grid-cols-2  content-center justify-items-center">
+                    <span class="bg-violet-600 px-3 py-2 rounded-lg text-white">YearOf
+                    </span><span class="py-2 px-3 text-violet-600">News</span>
+                </h1>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="flex flex-col justify-center items-center p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <button
+                            class="block font-bold py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                            aria-current="page">News</button>
+                    </li>
+                    <li>
+                        <button
+                            class="block font-bold py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blogs</button>
+                    </li>
+                    <li>
+                        <img src="image/Avatar.png"
+                            class="block font-bold py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!--  <nav class="mb-2 py-5 px-5">
+        <div class="relative w-full p-5">
+            <h1 class="absolute left-0 top-0 h-16  grid grid-cols-3 gap-3 content-center justify-items-center">
+                <span class="bg-violet-600 px-3 py-2 rounded-lg text-white">YearOf
+                </span><span class="py-2 px-3 text-violet-600">News</span>
+            </h1>
+
+            <div class="absolute right-0 top-0 h-16 ">
+                <img class="hidden " src="image/bar.png" alt="" srcset="">
+                <div class="grid grid-cols-3 gap-3 content-center justify-items-center">
+                    <button class=" font-bold text-violet-600">News</button>
+                    <button class=" font-bold">Blog</button>
+                    <img class="" src="image/Avatar.png" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </nav>
+ -->
+    <hr>
+    <div class="w-full p-5 flex place-content-evenly flex-nowrap  font-bold text-gray-400">
+        <button class="">Text</button>
+        <button class="">Text</button>
+
+    </div>
+
+
+    <script src="js/displayNoneOrBlock.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,33 @@
 body {
     margin: 0 auto;
     font-family: 'Manrope', sans-serif;
-    background-color: aqua;
+}
+
+h1 {
+    font-size: 1.6em !important;
+}
+
+h2 {
+    font-size: 1.4em !important;
+}
+
+h3 {
+    font-size: 1.17em !important;
+}
+
+h5 {
+    font-size: .83em !important;
+}
+
+h6 {
+    font-size: .75em !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bolder !important;
 }
