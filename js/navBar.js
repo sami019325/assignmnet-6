@@ -20,7 +20,6 @@ const displayNewsDetails = (id) => {
 
 
 const newsTypeList = ['Home', 'Breaking news', 'Regular news', 'International news', 'Sports', 'Entertainment', 'Culture', 'Arts', 'All news'];
-//for (typeOfNews in newsTypeList) {} 
 newsTypeList.forEach(typeOfNews => {
     newsTypeContainer = document.getElementById('newsTypeContainer')
     const newsType = document.createElement('div');
@@ -88,7 +87,6 @@ const showData = (datatype, categoryName, textFull = 150) => {
 
 const displayNumberOfNews = (totalNumber, category) => {
     const numberOfNewsContainer = document.getElementById('numberOfNews')
-    // const numberOfNewsDiv = document.createElement('div')
     numberOfNewsContainer.innerHTML = `
     <div>${totalNumber} items found for ${category} </div>
     `
