@@ -1,26 +1,15 @@
-const getData = (category) => {
+const getData = (category, categoryName) => {
 
     fetch(`https://openapi.programming-hero.com/api/news/category/${category}`)
         .then(Response => Response.json())
-        .then(newData => showData(newData, category))
+        .then(newData => showData(newData, categoryName))
+        .catch(err => console.log(err));
 
 
 
 }
 
 
-/* const newsTypeList = {
-    home: { id: 01, name: 'Home' },
-    Breaking_news: { id: 01, name: 'Breaking News' },
-    Regular_news: { id: 01, name: 'Regular News' },
-    International_news: { id: 01, name: 'International News' },
-    Sports: { id: 01, name: 'Sports' },
-    Entertainment: { id: 01, name: 'Entertainment' },
-    Culture: { id: 01, name: 'Culture' },
-    Arts: { id: 01, name: 'Arts' },
-    All_news: { id: 01, name: 'All news' },
-}
- */
 const newsTypeList = ['Home', 'Breaking news', 'Regular news', 'International news', 'Sports', 'Entertainment', 'Culture', 'Arts', 'All news'];
 //for (typeOfNews in newsTypeList) {} 
 newsTypeList.forEach(typeOfNews => {
@@ -34,13 +23,15 @@ newsTypeList.forEach(typeOfNews => {
 
 
 // show data 
-const showData = (datatype, category) => {
+const showData = (datatype, categoryName) => {
     const newsContainer = document.getElementById('news_container');
-    console.log(datatype.data, category)
+    newsContainer.innerHTML = "";
+    console.log(datatype.data, categoryName)
     const numberOfNews = datatype.data.length;
-    displayNumberOfNews(numberOfNews, category)
+    displayNumberOfNews(numberOfNews, categoryName)
     console.log("number of data:", numberOfNews)
     const totalData = datatype.data
+    console.log("dfsssssssssssssssssss", totalData)
     totalData.forEach(news => {
         console.log(news.image_url)
         const newsDiv = document.createElement('div');
@@ -92,34 +83,43 @@ const displayNews = (newsType) => {
     switch (newsType) {
         case "Home":
             category = '08';
-            return getData(category)
+            categoryName = "Home"
+            return getData(category, categoryName)
         case "Breaking news":
             category = '01';
-            return getData(category)
+            categoryName = 'Breaking news';
+            return getData(category, categoryName)
         case "Regular news":
-            category = '02';
-            return getData(category)
+            category = '02'
+            categoryName = "Regular news";
+            return getData(category, categoryName)
         case "International news":
             category = '03';
-            return getData(category)
+            categoryName = "International news"
+            return getData(category, categoryName)
         case "Sports":
             category = '04';
-            return getData(category)
+            categoryName = "Sports"
+            return getData(category, categoryName)
         case "Entertainment":
             category = '05';
-            return getData(category)
+            categoryName = "Entertainment"
+            return getData(category, categoryName)
         case "Culture":
             category = '06';
-            return getData(category)
+            categoryName = "Cultures"
+            return getData(category, categoryName)
         case "Arts":
             category = '07';
-            return getData(category)
+            categoryName = "Arts"
+            return getData(category, categoryName)
         case "All news":
             category = '08';
-            return getData(category)
+            categoryName = "All news"
+            return getData(category, categoryName)
     }
 
 };
-//displayNews('Home')
+displayNews("Home")
 
 //getData('04')
